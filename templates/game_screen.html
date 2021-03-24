@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Tennis Judge</title>
+  </head>
+  <body>
+    <h1 class="text-center">Let's Play!</h1>
+    <div class="text-center">
+        <a href= {{ url_for("pick_match") }} class="text-center"><button type="button" class="btn btn-dark">Back to Pick Games</button></a>
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm text-center">
+            Team Federer
+          </div>
+          <div class="col-sm text-center">
+            Team Nadal
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm text-center">
+            <button id="federer_point" player="federer" type="submit" class="btn btn-primary pointButton">Point</button>
+            <button id="federer_redo" player="federer" type="submit" class="btn btn-danger redoButton">Redo</button>
+          </div>
+          <div class="col-sm text-center">
+              <button id="nadal_point" player="nadal" type="submit" class="btn btn-primary pointButton">Point</button>
+              <button id="nadal_redo" player="nadal" type="submit" class="btn btn-danger redoButton">Redo</button>
+            </div>
+      </div>        
+        <div class="row">
+            <div class="col-sm text-center">
+              Sets: <span id="federer_sets">0</span> Games: <span id="federer_games">0</span> Points: <span id="federer_points">0</span>
+            </div>
+            <div class="col-sm text-center">
+              Sets: <span id="nadal_sets">0</span> Games: <span id="nadal_games">0</span> Points: <span id="nadal_points">0</span>
+            </div>
+        </div>
+    </div>
+    <div id="place_for_suggestions"></div>
+      
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='point.js') }}"></script>
+    <script src="{{ url_for('static', filename='redo.js') }}"></script> 
+  </body>
+</html>
